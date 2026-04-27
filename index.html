@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Deepika ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle at top, #1a1a2e, #0f0c29);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* BLUR TRANSITION */
+.blur {
+  filter: blur(10px);
+  transition: 1.5s ease;
+}
+
+/* LOCK */
+#lock {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: #0f0c29;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 12px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  border: none;
+  background: #ff4d6d;
+  color: white;
+  font-size: 16px;
+}
+
+/* GIFT */
+#giftScreen {
+  display: none;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* MAIN */
+#main {
+  display: none;
+  padding: 20px;
+  animation: fadeIn 2s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+h1 {
+  font-size: 2em;
+}
+
+/* SLIDESHOW */
+.slideshow {
+  width: 80%;
+  max-width: 260px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.slideshow img {
+  width: 100%;
+  border-radius: 15px;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
+
+.slideshow img.active {
+  opacity: 1;
+  position: relative;
+}
+
+/* MESSAGE */
+.typing {
+  margin: 20px auto;
+  max-width: 90%;
+  font-size: 1.25rem;
+  line-height: 1.8;
+  white-space: pre-line;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+/* HEARTS */
+.heart {
+  position: absolute;
+  animation: float 6s linear infinite;
+}
+
+@keyframes float {
+  from { transform: translateY(100vh); }
+  to { transform: translateY(-10vh); }
+}
+
+#ytplayer {
+  width: 0;
+  height: 0;
+}
+</style>
+</head>
+
+<body>
+
+<!-- LOCK -->
+<div id="lock">
+  <h2>Enter Password ❤️</h2>
+  <input type="password" id="pass">
+  <button onclick="unlock()">Open</button>
+</div>
+
+<!-- GIFT -->
+<div id="giftScreen">
+  <h2>🎁 Tap Your Gift 🎁</h2>
+  <div style="font-size:90px; cursor:pointer;" onclick="openGift()">🎁</div>
+</div>
+
+<!-- MAIN -->
+<div id="main">
+
+  <h1>🎂 Happy Birthday Deepika ❤️</h1>
+
+  <!-- SLIDES -->
+  <div class="slideshow">
+    <img src="https://i.postimg.cc/mk2890kG/Snapchat-1717768683.jpg" class="active">
+    <img src="https://i.postimg.cc/43F9wyJ3/Snapchat-697198122.jpg">
+    <img src="https://i.postimg.cc/kMRx1QRX/IMG-20260425-155848.jpg">
+  </div>
+
+  <div class="typing" id="text"></div>
+
+  <iframe id="ytplayer" allow="autoplay"></iframe>
+
+</div>
+
+<script>
+
+/* PASSWORD */
+function unlock() {
+  let pass = document.getElementById("pass").value;
+  if (pass === "2809") {
+    document.getElementById("lock").classList.add("blur");
+    setTimeout(() => {
+      document.getElementById("lock").style.display = "none";
+      document.getElementById("giftScreen").style.display = "flex";
+    }, 1000);
+  } else {
+    alert("Wrong password ❤️");
+  }
+}
+
+/* OPEN GIFT */
+function openGift() {
+  document.getElementById("giftScreen").style.display = "none";
+  document.getElementById("main").style.display = "block";
+  playMusic();
+  startSlideshow();
+  setTimeout(() => {
+    document.getElementById("text").style.opacity = "1";
+    typing();
+  }, 1500);
+}
+
+/* SONG */
+function playMusic() {
+  document.getElementById("ytplayer").src =
+  "https://www.youtube.com/embed/eRM2reLxN5k?autoplay=1&start=44";
+}
+
+/* MESSAGE */
+const message = `HAPPY BIRTHDAY TO YOU BUKUUUUU......❤️. Love you soo much deepika...💙 You know what , it's everyday since I've been missing you soo badly that what not , i cannot express but sure to be Missing you as much you do. 💗My love , this is going to be your 18th birthday, I wish you all the very best for your life ahead , we both have so many problems and difficulties in our lives recently but I'm sure one day these problems are going to fade away and just we'll be together peacefully , I believe that one day this might happen 💖. Aur han , naaraz to aap bhot ho mujhse ye mai janta hu , but I think you would forgive me by seeing my small efforts even while I'm not getting privacy , and managing somehow for you , and you know these problems are very disturbing for me so that's why I'm getting frustrated nhi to mai tumse bhot zyada pyaar karta hu , aur humesha karta rahunga ! Anyways we'll figure out that later , but now ! This is your 18th birthday so I want you to make it good even without me !!❤️ I don't want any excuses and rona dhona ! Cause I too know how much you've suffered and I've suffered tooo so... Make it good , I want to see you happy this time ! I don't want to listen ki nhi ho payega ! Hojayega ! Aur congratulations meri jaaaaaaaan ! You've did very best in ipe ! 98 % , you're making me jealous. But I'm very proud of you my love 💙and I know you'll study even more harder from now ! Just have patience and be focused, I want to see you happy lifetime, with me or without!💗 Aur meri jaan naaraazgi dur rakho aur acche se exam dena neet ka I wish you all the very best !!! I love you veryyy much ! Celebrate your birthday! No excuses this time ! Mai humesha apke saath hu ! Dhyan rakhna buku apna ! I love you sooo much ! And at last again I wish you a very very happy birthday loveee 💗`;
+
+let i = 0;
+function typing() {
+  if (i < message.length) {
+    document.getElementById("text").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typing, 30);
+  }
+}
+
+/* SLIDESHOW FADE */
+function startSlideshow() {
+  const slides = document.querySelectorAll(".slideshow img");
+  let index = 0;
+
+  setInterval(() => {
+    slides[index].classList.remove("active");
+    index = (index + 1) % slides.length;
+    slides[index].classList.add("active");
+  }, 3000);
+}
+
+/* HEARTS */
+setInterval(() => {
+  let heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "💖";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+  document.body.appendChild(heart);
+
+  setTimeout(() => heart.remove(), 6000);
+}, 400);
+
+</script>
+
+</body>
+</html>
